@@ -1,0 +1,14 @@
+.hello{
+    background-image: url("../../../assets/img/hello.jpg"); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height:100vh;
+}
+
+.donreetitle{
+    -webkit-text-stroke: 2px red;
+}

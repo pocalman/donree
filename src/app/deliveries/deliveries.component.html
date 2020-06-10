@@ -1,0 +1,106 @@
+<div class="delivery">
+   <h1 class="pt-5 pb-5 donreetitle text-white text-center">Demander une livraison</h1>
+   <div class="container bg-light py-5 px-4 rounded-lg">
+<form [formGroup]="this.form">
+    <input placeholder="Nom du donateur" 
+           formControlName="customerName"
+           type="text" 
+           class="form-control"
+       required
+           >
+           <div *ngIf="form.get('customerName').invalid && (form.get('customerName').dirty || form.get('customerName').touched)"
+           class="alert alert-danger">
+           <div *ngIf="form.get('customerName').errors.required">
+              Le nom est requis.
+           </div>
+           <div *ngIf="form.get('customerName').errors.minlength">
+              Le nom doit être composé d'eau moins 3 caractères.
+           </div>
+         </div>
+
+           <div #search>
+           <input placeholder="Adresse de provenance du don" 
+           formControlName="customerAddress" 
+           type="text" 
+           class="form-control autocomplete my-2"
+           autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search1 required
+           >
+           <div *ngIf="form.get('customerAddress').invalid && (form.get('customerAddress').dirty || form.get('customerAddress').touched)"
+           class="alert alert-danger">
+           <div *ngIf="form.get('customerAddress').errors.required">
+              Votre adresse est requise.
+           </div>
+           <div *ngIf="form.get('customerAddress').errors.minlength">
+            Votre adresse doit être composé d'eau moins 6 caractères.
+           </div>
+         </div>
+
+
+           <input placeholder="Adresse du don"
+           formControlName="deliveryAddress" 
+           type="text" 
+           class="form-control autocomplete my-2"
+           autocorrect="off" autocapitalize="off" spellcheck="off" id="search2" #search2 required    
+           >
+           <div *ngIf="form.get('deliveryAddress').invalid && (form.get('deliveryAddress').dirty || form.get('deliveryAddress').touched)"
+           class="alert alert-danger">
+           <div *ngIf="form.get('deliveryAddress').errors.required">
+            L'adresse est requise.
+           </div>
+           <div *ngIf="form.get('deliveryAddress').errors.minlength">
+            L'adresse doit être composé d'eau moins 6 caractères.
+           </div>
+         </div>
+           <input placeholder="Entrez votre numéro de téléphone"
+           formControlName="phone" 
+           type="text" 
+           class="form-control my-2"
+           autocorrect="off" autocapitalize="off" spellcheck="off"  #search2 required
+           >
+           <div *ngIf="form.get('phone').invalid && (form.get('phone').dirty || form.get('phone').touched)"
+           class="alert alert-danger">
+           <div *ngIf="form.get('phone').errors.required">
+              Votre numéro de téléphone est requis.
+           </div>
+           <div *ngIf="form.get('phone').errors.minlength">
+            Votre numéro de téléphone doit être composé d'eau moins 6 caractères.
+           </div>
+         </div>
+           <textarea rows="4" cols="150" formControlName="don" placeholder="Décrivez votre don">
+            </textarea>
+            <div *ngIf="form.get('don').invalid && (form.get('don').dirty || form.get('don').touched)"
+            class="alert alert-danger">
+            <div *ngIf="form.get('don').errors.required">
+               Vous devez décrire votre don.
+            </div>
+            <div *ngIf="form.get('don').errors.minlength">
+             Mettez une description.
+            </div>
+          </div>
+           <input placeholder="Volume"
+           formControlName="volume" 
+           type="text" 
+           class="form-control my-2"
+           autocorrect="off" autocapitalize="off" spellcheck="off"  #search2  required   
+           >
+           <div *ngIf="form.get('volume').invalid && (form.get('volume').dirty || form.get('volume').touched)"
+           class="alert alert-danger">
+           <div *ngIf="form.get('volume').errors.required">
+              Vous devez mettre un volume.
+           </div>
+           <div *ngIf="form.get('volume').errors.minlength">
+            Insérer au moins un caractère dans la case.
+           </div>
+         </div>
+        </div>
+           <button 
+           class="btn btn-primary"
+           (click)="onSubmit()" 
+           [disabled]="!form.valid">
+      Submit
+      </button>
+</form>
+</div>
+</div>
+
+

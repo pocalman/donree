@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "donree",
+      "public": "dist/donree",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

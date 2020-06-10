@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "donree-c9581": {
+      "hosting": {
+        "donree": [
+          "donree-c9581"
+        ]
+      }
+    }
+  }
+}
